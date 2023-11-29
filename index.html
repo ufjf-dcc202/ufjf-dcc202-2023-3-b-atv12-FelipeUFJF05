@@ -6,12 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DCC202 - Atividade 12: Felipe Lima Nogueira</title>
     <script type="module" src="main.js"></script>
+    <style>
+        input:invalid{
+            border: 4px 4px 4px 4px;
+            border-color: red;
+        }
+    </style>
 </head>
 
 <body>
     <main>
         <h1>DCC202 - Atividade 12: Felipe Lima Nogueira</h1>
         <p>Esta é a página principal que usa JavaScript para adicionar iteração.</p>
+
+        <section>
+            <form name="entrada">
+
+                <input type="number" name="quantidade" value="5" min="0" max="12">
+
+                <fieldset>
+                    <label>
+                        <input type="radio" name="origem" value="maria" checked/>Maria</label>
+                    <label>
+                        <input type="radio" name="origem" value="joao" />João</label>
+                </fieldset>
+
+
+                
+                <select name="fruta">
+                    <option value="maca">Maça</option>
+                    <option value="pera">Pera</option>
+                    <option value="banana">Banana</option>
+                </select>
+
+                <button type="submit" name="enviar">Enviar</button>
+            </form>
+        </section>
+
+        <section id="saida">
+            <h2>João</h2>
+            <ol id="joao"></ol>
+            <h2>Maria</h2>
+            <ol id="maria"></ol>
+        </section>
     </main>
     
 </body>
