@@ -22,17 +22,14 @@
         <section>
             <form name="entrada">
 
-                <input type="number" name="quantidade" value="5" min="0" max="12">
-
                 <fieldset>
                     <legend>Origem</legend>
                     <label>
-                        <label>
-                            <input type="radio" name="origem" value="maria" checked/>Pomar</label>
-                        <label>
-                        <input type="radio" name="origem" value="maria" />Maria</label>
+                            <input type="radio" name="origem" value="pomar" checked/>Pomar</label>
                     <label>
                         <input type="radio" name="origem" value="joao" />João</label>
+                    <label>
+                        <input type="radio" name="origem" value="maria" />Maria</label>
                 </fieldset>
 
                 <fieldset>
@@ -40,11 +37,12 @@
                     <label>
                         <input type="radio" name="destino" value="pomar" checked/>Pomar</label>
                     <label>
-                    <label>
-                        <input type="radio" name="destino" value="maria" checked/>Maria</label>
-                    <label>
                         <input type="radio" name="destino" value="joao" />João</label>
+                    <label>
+                        <input type="radio" name="destino" value="maria" />Maria</label>
                 </fieldset>
+
+                <input type="number" name="quantidade" value="1" min="0" max="12" step="1"/>
 
 
                 <select name="fruta">
