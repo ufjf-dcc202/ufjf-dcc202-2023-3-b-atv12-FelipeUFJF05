@@ -1,9 +1,11 @@
 import { getEstoque, transacaoNoEstoque, limpaEstoque } from "./estoque.js";
 
 const olJoao = document.querySelector("#joao");
-const olMaria = document.querySelector("#maria")
+const olMaria = document.querySelector("#maria");
+const btnLimpar = document.querySelector("#limpar");
 
 document.entrada.addEventListener('submit', leFormulario);
+btnLimpar.addEventListener('click', esvaziaLista);
 
 atualizaTela();
 
@@ -39,8 +41,7 @@ function preencheLista(lista, estoqueDaPessoa){
     }
 }
 
-function esvaziaLista(){
-    let estoque = getEstoque();
-    limpaEstoque();
-    estoque = getEstoque();
+function esvaziaLista(event){
+    event.preventDefault(event)
+    console.log("Estoque Vazio");
 }
