@@ -18,8 +18,8 @@ test('O estoque deve começar três maçãs no total', () => {
   const estoque = getEstoque();
   expect(estoque['joao']).toBeTypeOf('object');
   expect(estoque['maria']).toBeTypeOf('object');
-  expect(estoque['joao']).toHaveLength(1);
-  expect(estoque['maria']).toHaveLength(1);
+  expect(estoque['joao']).toHaveLength(2);
+  expect(estoque['maria']).toHaveLength(2);
   expect(estoque['maria'][0].tipo).toBe('maca');
   expect(estoque['maria'][0].quantidade).toBe(2);
   expect(estoque['joao'][0].tipo).toBe('maca');

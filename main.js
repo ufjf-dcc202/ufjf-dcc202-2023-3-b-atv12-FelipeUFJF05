@@ -1,4 +1,4 @@
-import { getEstoque, transacaoNoEstoque } from "./estoque.js";
+import { getEstoque, transacaoNoEstoque, limpaEstoque } from "./estoque.js";
 
 const olJoao = document.querySelector("#joao");
 const olMaria = document.querySelector("#maria")
@@ -34,7 +34,13 @@ function preencheLista(lista, estoqueDaPessoa){
     {
         const monte = estoqueDaPessoa[i];
         const li = document.createElement('li');
-        li.textContent = `${monte.tipo}: ${monte.qtd}`;
+        li.textContent = `${monte.tipo}: ${monte.quantidade}`;
         lista.append(li);
     }
+}
+
+function esvaziaLista(){
+    let estoque = getEstoque();
+    limpaEstoque();
+    estoque = getEstoque();
 }
