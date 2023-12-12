@@ -2,10 +2,15 @@ import { getEstoque, transacaoNoEstoque, limpaEstoque } from "./estoque.js";
 
 const olJoao = document.querySelector("#joao");
 const olMaria = document.querySelector("#maria");
-const btnLimpar = document.querySelector("#limpar");
 
 document.entrada.addEventListener('submit', leFormulario);
-btnLimpar.addEventListener('click', esvaziaLista);
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('buttonLimparLista').addEventListener('click', () => {
+        limpaEstoque();
+        atualizaTela();
+    });
+});
 
 atualizaTela();
 
@@ -21,13 +26,22 @@ function leFormulario(event)
 
     transacaoNoEstoque(origem, destino, fruta, quantidade);
     atualizaTela();
-    // document.entrada.submit();
 }
 
 function atualizaTela(){
     const estoque = getEstoque();
-    preencheLista(olJoao, estoque.joao);
-    preencheLista(olMaria, estoque.maria);
+    olJoao.innerHTML = "";
+    olMaria.innerHTML = "";
+    document.entrada.quantidade.value = 1;
+    document.entrada.fruta.value = "maca";
+
+    if (estoque.joao && estoque.joao.length > 0) {
+        preencheLista(olJoao, estoque.joao);
+    }
+
+    if (estoque.maria && estoque.maria.length > 0) {
+        preencheLista(olMaria, estoque.maria);
+    }
 }
 
 function preencheLista(lista, estoqueDaPessoa){
@@ -37,11 +51,6 @@ function preencheLista(lista, estoqueDaPessoa){
         const monte = estoqueDaPessoa[i];
         const li = document.createElement('li');
         li.textContent = `${monte.tipo}: ${monte.quantidade}`;
-        lista.append(li);
+        lista.appendChild(li);
     }
-}
-
-function esvaziaLista(event){
-    event.preventDefault(event)
-    console.log("Estoque Vazio");
 }
