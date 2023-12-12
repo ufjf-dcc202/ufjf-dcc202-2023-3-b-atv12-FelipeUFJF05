@@ -6,7 +6,7 @@ const olMaria = document.querySelector("#maria");
 document.entrada.addEventListener('submit', leFormulario);
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('buttonLimparLista').addEventListener('click', () => {
+    document.getElementById('limpar').addEventListener('click', () => {
         limpaEstoque();
         atualizaTela();
     });
